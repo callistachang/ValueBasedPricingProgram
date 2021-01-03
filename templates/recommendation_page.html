@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+
+<h3 class="mb-3">Price Recomendation Table</h3>
+
+<table class="table table-sm table-striped table-responsive-sm">
+  <thead>
+    <tr>
+      <th scope="col">USP Ranking</th>
+      <th scope="col">Bosch's Perceived Ranking</th>
+      <th scope="col">Customer's Actual Ranking</th>
+      <th scope="col">Recommended Pricing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">USP 1</th>
+      <td>Rank 4</td>
+      <td>Rank 1</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <th scope="row">USP 2</th>
+      <td>Rank 2</td>
+      <td>Rank 2</td>
+      <td>$200</td>
+    </tr>
+    <tr>
+      <th scope="row">USP 3</th>
+      <td>Rank 4</td>
+      <td>Rank 3</td>
+      <td>$300</td>
+    </tr>
+    {% comment %} 
+    {% for image_object in image_objects %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{{ image_object.image.url }}" target="_blank">{{ image_object.image.name }}</a></td>
+      <td>{{ image_object.labels.first.label }}/{{ image_object.labels.first.score }}</td>
+      <td>{{ image_object.uploaded_at }}</td>
+    </tr>
+    {% endfor %} 
+    {% endcomment %}
+  </tbody>
+</table>
+
+{% endblock %}

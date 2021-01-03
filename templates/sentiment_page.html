@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<h3 class="mb-3">Sentiment Analysis Summary</h3>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-subtitle">Overall Sentiment Score</h5>
+        <p class="card-text">21234</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-subtitle">Number of Comments</h5>
+        <p class="card-text">211324</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-subtitle">Sentiment Score Over Time</h5>
+        <p class="card-text">INSERT DYNAMIC CHART HERE</p>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-subtitle">Positive Sentiments</h5>
+        <p class="card-text">INSERT CHART HERE</p>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-subtitle">Negative Sentiments</h5>
+        <p class="card-text">INSERT CHART HERE</p>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3 class="mb-3">Sentiment Analysis Table</h3>
+<table class="table table-sm table-striped table-responsive-sm">
+  <thead>
+    <tr>
+      <th scope="col">Product Sentiment</th>
+      <th scope="col">Bosch Ranking</th>
+      <th scope="col">Competitor 1</th>
+      <th scope="col">Competitor 2</th>
+      <th scope="col">Competitor 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Keyword 1</th>
+      <td>Rank 1</td>
+      <td>ABC</td>
+      <td>DEF</td>
+      <td>GHI</td>
+    </tr>
+    <tr>
+      <th scope="row">Keyword 2</th>
+      <td>Rank 2</td>
+      <td>ABC</td>
+      <td>DEF</td>
+      <td>GHI</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}
