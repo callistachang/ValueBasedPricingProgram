@@ -33,16 +33,6 @@
       <td>Rank 3</td>
       <td>$300</td>
     </tr>
-    {% comment %} 
-    {% for image_object in image_objects %}
-    <tr>
-      <th scope="row">{{ forloop.counter }}</th>
-      <td><a href="{{ image_object.image.url }}" target="_blank">{{ image_object.image.name }}</a></td>
-      <td>{{ image_object.labels.first.label }}/{{ image_object.labels.first.score }}</td>
-      <td>{{ image_object.uploaded_at }}</td>
-    </tr>
-    {% endfor %} 
-    {% endcomment %}
   </tbody>
 </table>
 
