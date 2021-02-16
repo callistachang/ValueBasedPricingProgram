@@ -16,7 +16,7 @@ async def index():
 async def predict_price(qualities: ProductQualities):
     data = qualities.dict()
     prediction = model.predict_price(**data)
-    return {"prediction": prediction}
+    return {"price": prediction}
 
 @app.get("/coef")
 async def model_coefficients():

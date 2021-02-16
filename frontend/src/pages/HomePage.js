@@ -10,10 +10,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { DropdownInput } from "./components/DropdownInput";
-import { productList, productToSubproductDict, competitorList } from "./mock";
+import { DropdownInput } from "../components/DropdownInput";
+import { productList, productToSubproductDict, competitorList } from "../data/mock";
 import { useHistory } from "react-router-dom";
-import { Formik } from 'formik';
 
 function HomePage() {
   const [inputProduct, setInputProduct] = useState(productList[0]);
