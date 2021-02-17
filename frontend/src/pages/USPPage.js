@@ -1,6 +1,6 @@
 import { Container, Box } from "@chakra-ui/react";
 import { SideMenuButton } from "../components/SideMenuButton";
-function ResultsPage(props) {
+function USPPage(props) {
   return (
     <div>
       <Box bg="#31343A" w="100%" p={2} color="white">
@@ -32,4 +32,4 @@ function ResultsPage(props) {
   );
 }
 
-export default ResultsPage;
+export default USPPage;

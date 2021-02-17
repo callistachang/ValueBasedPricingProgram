@@ -11,7 +11,11 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { DropdownInput } from "../components/DropdownInput";
-import { productList, productToSubproductDict, competitorList } from "../data/mock";
+import {
+  productList,
+  productToSubproductDict,
+  competitorList,
+} from "../data/mock";
 import { useHistory } from "react-router-dom";
 
 function HomePage() {
