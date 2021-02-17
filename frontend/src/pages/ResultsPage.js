@@ -3,10 +3,6 @@ import { SideMenuButton } from "../components/SideMenuButton";
 function ResultsPage(props) {
   return (
     <div>
-      <Box bg="#31343A" w="100%" p={2} color="white">
-        <SideMenuButton />
-      </Box>
-      <Box></Box>
       <Container>
         <p>chosen product: {props.location.state.product}</p>
         <p>chosen subproduct: {props.location.state.subproduct}</p>
