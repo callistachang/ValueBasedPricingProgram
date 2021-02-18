@@ -10,11 +10,12 @@ import {
   Button,
   Stack,
   Input,
+  Box,
   useDisclosure,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-export function SideMenuButton() {
+export function SideMenuNavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -29,7 +30,7 @@ export function SideMenuButton() {
   };
 
   return (
-    <>
+    <Box bg="#31343A" w="100%" p={2} mb={2} color="white">
       <Button ref={btnRef} bg="brand.100" onClick={onOpen} size="xs" m={0}>
         Open
       </Button>
@@ -44,28 +45,20 @@ export function SideMenuButton() {
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
-
+            <DrawerHeader>Side Menu</DrawerHeader>
             <DrawerBody>
               <Stack spacing={2}>
-                <LinkButton to="/usp">USP Report</LinkButton>
-                <LinkButton to="/recommendation">
-                  Price Recommendation
+                <LinkButton to="/results">USP Results</LinkButton>
+                <LinkButton to="/recommendations">
+                  Price Recommendations
                 </LinkButton>
-                <LinkButton to="/sentiment">Result Sentiments</LinkButton>
-                <LinkButton to="/">Home Page</LinkButton>
+                <LinkButton to="/sentiments">Sentiment Analysis</LinkButton>
+                <LinkButton to="/">Landing Page</LinkButton>
               </Stack>
             </DrawerBody>
-
-            {/* <DrawerFooter>
-              <Button variant="outline" mr={1} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button color="blue">Save</Button>
-            </DrawerFooter> */}
           </DrawerContent>
         </DrawerOverlay>
       </Drawer>
-    </>
+    </Box>
   );
 }

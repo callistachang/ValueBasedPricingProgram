@@ -9,7 +9,7 @@ import {
   InputGroup,
   Button,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { DropdownInput } from "../components/DropdownInput";
 import {
   productList,
@@ -17,6 +17,8 @@ import {
   competitorList,
 } from "../data/mock";
 import { useHistory } from "react-router-dom";
+import { Context } from "../data/Store";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [inputProduct, setInputProduct] = useState(productList[0]);
@@ -31,7 +33,8 @@ function HomePage() {
   const [targetSellingPrice, setTargetSellingPrice] = useState(null);
   const [inputUSPPrices, setInputUSPPrices] = useState([]);
   const [inputUSPs, setInputUSPs] = useState([]);
-  let history = useHistory();
+  const [state, dispatch] = useContext(Context);
+  const history = useHistory();
 
   const handleSelectProduct = (event) => {
     const product = event.target.value;
@@ -68,7 +71,8 @@ function HomePage() {
       USPs: inputUSPs,
       USPPrices: inputUSPPrices,
     };
-    history.push("/results", formData);
+    dispatch({ type: "SET_INPUT", payload: formData });
+    history.push("/results");
   };
 
   return (

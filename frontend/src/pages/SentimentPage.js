@@ -1,32 +1,32 @@
-import { Container, Box } from "@chakra-ui/react";
-import { SideMenuButton } from "../components/SideMenuButton";
+import {
+  Container,
+  Box,
+  Text,
+  ListItem,
+  OrderedList,
+  Stack,
+  Heading,
+} from "@chakra-ui/react";
+import { useContext } from "react";
+import { SentimentTable } from "../components/SentimentTable";
+import { SideMenuNavBar } from "../components/SideMenuNavBar";
+import { USPTable } from "../components/USPTable";
+import { Context } from "../data/Store";
+
 function SentimentPage(props) {
+  const [state, dispatch] = useContext(Context);
+
   return (
     <div>
-      <Box bg="#31343A" w="100%" p={2} color="white">
-        <SideMenuButton />
-      </Box>
-      <Box></Box>
+      <SideMenuNavBar />
       <Container>
-        <p>chosen product: {props.location.state.product}</p>
-        <p>chosen subproduct: {props.location.state.subproduct}</p>
-        <p>chosen competitor: {props.location.state.competitor}</p>
-        <p>chosen cost price: {props.location.state.costPrice}</p>
-        <p>
-          chosen target selling price: {props.location.state.targetSellingPrice}
-        </p>
-        <p>usps:</p>
-        <ul>
-          {props.location.state.USPs.map((usp) => (
-            <li>{usp}</li>
-          ))}
-        </ul>
-        <p>usps prices:</p>
-        <ul>
-          {props.location.state.USPPrices.map((uspPrice) => (
-            <li>{uspPrice}</li>
-          ))}
-        </ul>
+        <Stack spacing={10}>
+          <Heading>Sentiment Results Page</Heading>
+          <Box>
+            <Text as="b">Keyword Sentiment Table:</Text>
+            <SentimentTable />
+          </Box>
+        </Stack>
       </Container>
     </div>
   );

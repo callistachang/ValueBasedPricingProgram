@@ -4,6 +4,7 @@ import App from "./App";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import Store from "./data/Store";
 
 const theme = extendTheme({
   colors: {
@@ -21,7 +22,9 @@ const theme = extendTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <Store>
+        <App />
+      </Store>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")
