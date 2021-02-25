@@ -18,6 +18,8 @@ function SentimentPage(props) {
   const [state, dispatch] = useContext(Context);
   const wordcloudImageFpath =
     "/wordcloud/" + state.product + "_" + state.subproduct + ".png";
+  const uspCsvPath =
+    "/csv/" + state.product + "_" + state.subproduct + "_Sentiment.csv";
 
   return (
     <div>
@@ -31,7 +33,7 @@ function SentimentPage(props) {
           </Box>
           <Box>
             <Text as="b">Keyword Sentiment Table:</Text>
-            <SentimentTable />
+            <SentimentTable uspCsvPath={uspCsvPath} />
           </Box>
         </Stack>
       </Container>
