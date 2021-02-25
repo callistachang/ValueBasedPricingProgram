@@ -53,6 +53,7 @@ export function SideMenuNavBar() {
                   Price Recommendations
                 </LinkButton>
                 <LinkButton to="/sentiments">Sentiment Analysis</LinkButton>
+                <LinkButton to="/qna">Vehicle Q&A</LinkButton>
                 <LinkButton to="/">Landing Page</LinkButton>
               </Stack>
             </DrawerBody>

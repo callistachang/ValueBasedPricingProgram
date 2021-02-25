@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import ResultsPage from "./pages/ResultsPage";
 import SentimentPage from "./pages/SentimentPage";
 import PriceRecommendationPage from "./pages/PriceRecommendationPage";
+import QnAPage from "./pages/QnAPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             path="/recommendations"
             component={PriceRecommendationPage}
           />
+          <Route exact path="/qna" component={QnAPage} />
           <Route exact path="/sentiments" component={SentimentPage} />
         </Switch>
       </Router>

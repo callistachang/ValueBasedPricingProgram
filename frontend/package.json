@@ -1,5 +1,5 @@
 {
-  "name": "bosch-react",
+  "name": "bosch-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,14 +9,12 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "formik": "^2.2.6",
     "framer-motion": "^3.2.2-rc.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "yup": "^0.32.8"
+    "react-scripts": "4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
