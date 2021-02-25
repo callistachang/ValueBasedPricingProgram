@@ -10,12 +10,13 @@ import {
 } from "@chakra-ui/react";
 
 export function RecommendationTable(props) {
-  const createRow = (usp, boschRank, customerRank, price) => (
+  const createRow = (usp, inputRank, boschRank, inputPrice, modelPrice) => (
     <Tr>
       <Td>{usp}</Td>
+      <Td>{inputRank}</Td>
       <Td>{boschRank}</Td>
-      <Td>{customerRank}</Td>
-      <Td>{price}</Td>
+      <Td>{inputPrice}</Td>
+      <Td>{modelPrice}</Td>
     </Tr>
   );
 
@@ -27,14 +28,21 @@ export function RecommendationTable(props) {
         <Thead>
           <Tr>
             <Th>USP Title</Th>
-            <Th>Customer Perceived Ranking</Th>
+            <Th>Input Perceived Ranking</Th>
             <Th>Bosch Perceived Ranking</Th>
-            <Th>Recommended Pricing</Th>
+            <Th>Input Pricing</Th>
+            <Th>Bosch Recommended Pricing</Th>
           </Tr>
         </Thead>
         <Tbody>
           {Array.from(Array(props.USPs.length).keys()).map((i) =>
-            createRow(props.USPs[i], props.USPPrices[i])
+            createRow(
+              props.USPs[i],
+              i + 1,
+              "MODEL RANKING",
+              props.USPPrices[i],
+              "MODEL COEFFS"
+            )
           )}
         </Tbody>
       </Table>

@@ -5,25 +5,55 @@ import { readRemoteFile } from "react-papaparse";
 export function SentimentTable(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [arr, setArr] = useState([]);
+  const [competitorRankArr, setCompetitorRankArr] = useState([]);
+  console.log(props.competitorKeywordPath);
 
   useEffect(() => {
     readRemoteFile(props.uspCsvPath, {
       complete: (results) => {
         setArr(results["data"].slice(0, 20));
-        setIsLoading(false);
-        console.log(arr);
       },
       header: true,
     });
+    readRemoteFile(props.competitorKeywordPath, {
+      complete: (results) => {
+        setCompetitorRankArr(results["data"]);
+        console.log("here be d arr");
+        console.log(competitorRankArr);
+      },
+      header: true,
+    });
+    setIsLoading(false);
   }, []);
 
-  const createRow = (keyword, rank, competitor) => (
-    <Tr>
-      <Td>{keyword}</Td>
-      <Td>{rank}</Td>
-      <Td>{competitor}</Td>
-    </Tr>
-  );
+  const createRow = (keyword, rank) => {
+    const competitorRankIndex = competitorRankArr.findIndex(
+      (obj) => obj["word/phrase"] == keyword
+    );
+    const competitorRank =
+      competitorRankIndex == -1 ? "-" : competitorRankIndex + 1;
+    // var competitorRank = competitorRankArr.length >0 ? competitorRankArr[0];
+    // if (competitorRankArr.length > 0) {
+    //   competitorRank
+
+    // }
+
+    // console.log(competitorRank);
+    // const competitorRank = competitorRankArr.filter((obj, i) => {
+    //   if (obj["word/phrase"] == keyword) {
+    //     return i + 1;
+    //   }
+    // });
+    // console.log(competitorRank);
+
+    return (
+      <Tr>
+        <Td>{keyword}</Td>
+        <Td>{rank}</Td>
+        <Td>{competitorRank || "-"}</Td>
+      </Tr>
+    );
+  };
 
   if (isLoading == true) {
     return <div />;
@@ -43,7 +73,7 @@ export function SentimentTable(props) {
           </Thead>
           <Tbody>
             {Array.from(Array(arr.length).keys()).map((i) =>
-              createRow(arr[i]["word/phrase"], i + 1, "")
+              createRow(arr[i]["word/phrase"], i + 1)
             )}
           </Tbody>
         </Table>

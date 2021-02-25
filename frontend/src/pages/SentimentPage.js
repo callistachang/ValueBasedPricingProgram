@@ -20,6 +20,8 @@ function SentimentPage(props) {
     "/wordcloud/" + state.product + "_" + state.subproduct + ".png";
   const uspCsvPath =
     "/csv/" + state.product + "_" + state.subproduct + "_Sentiment.csv";
+  const competitorKeywordPath =
+    "/csv/" + state.product + "_Competitor Keyword Rank.csv";
 
   return (
     <div>
@@ -28,12 +30,23 @@ function SentimentPage(props) {
         <Stack spacing={10}>
           <Heading>Sentiment Results Page</Heading>
           <Box>
+            <Text>
+              For {state.product} ({state.subproduct}), these keywords were
+              mentioned most in customers' reviews of Bosch products. This is
+              measured against which keywords are mentioned most in competitors'
+              products.
+            </Text>
+          </Box>
+          <Box>
             <Text as="b">Keyword wordcloud:</Text>
             <Image src={wordcloudImageFpath} alt="wordcloud" />
           </Box>
           <Box>
-            <Text as="b">Keyword Sentiment Table:</Text>
-            <SentimentTable uspCsvPath={uspCsvPath} />
+            <Text as="b">Top 20 keywords:</Text>
+            <SentimentTable
+              uspCsvPath={uspCsvPath}
+              competitorKeywordPath={competitorKeywordPath}
+            />
           </Box>
         </Stack>
       </Container>

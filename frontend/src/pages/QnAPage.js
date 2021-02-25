@@ -8,23 +8,29 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { useContext } from "react";
-import { SentimentTable } from "../components/SentimentTable";
+import { QnATable } from "../components/QnATable";
 import { SideMenuNavBar } from "../components/SideMenuNavBar";
-import { USPTable } from "../components/USPTable";
 import { Context } from "../data/Store";
 
 function QnAPage(props) {
   const [state, dispatch] = useContext(Context);
+  console.log(props);
 
   return (
     <div>
       <SideMenuNavBar />
       <Container>
         <Stack spacing={10}>
-          <Heading>Sentiment Results Page</Heading>
+          <Heading>QnA Page</Heading>
           <Box>
-            <Text as="b">Keyword Sentiment Table:</Text>
-            <SentimentTable />
+            <Text>
+              For {state.product} ({state.subproduct}), these vehicle models
+              were mentioned most in questions asked by customers.
+            </Text>
+          </Box>
+          <Box>
+            <Text as="b">QnA Table:</Text>
+            <QnATable />
           </Box>
         </Stack>
       </Container>

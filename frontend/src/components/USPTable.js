@@ -34,8 +34,8 @@ export function USPTable(props) {
           {Array.from(Array(props.USPs.length).keys()).map((i) =>
             createRow(
               props.USPs[i],
-              "bosch's ranking from the model",
-              "from flora's csv OR COMPETITORS RANKING FROM THE MODEL"
+              "BOSCH'S RANKING FROM THE MODEL",
+              "COMPETITORS RANKING FROM THE MODEL"
             )
           )}
         </Tbody>

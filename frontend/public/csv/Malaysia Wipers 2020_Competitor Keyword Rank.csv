@@ -1,0 +1,21 @@
+word/phrase,rank,cat,newcat
+good,472.9512042,,
+fast,248.2781194,,
+delivery,241.1407596,delivery,delivery
+fast delivery,225.3954023,delivery,delivery
+product,169.9397699,,
+seller,148.7007697,delivery,service
+quality,147.7327863,product,quality
+best,126.1370396,,
+received,125.5607383,delivery,delivery
+good product,124.2728478,,
+condition,113.0531464,product,product
+good condition,108.8545988,product,product
+good quality,89.67080726,product,quality
+nice,86.64152869,,
+item,85.69227466,,
+value,83.89641477,price,price
+tq,83.04571652,,
+money,78.30053868,price,price
+received good,77.50925467,delivery,delivery
+value money,74.77309684,price,price

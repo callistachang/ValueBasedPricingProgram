@@ -24,6 +24,13 @@ function ResultsPage(props) {
         <Stack spacing={10}>
           <Heading>USP Results Page</Heading>
           <Box>
+            <Text>
+              We are able to see the rankings of the USPs inputted. These
+              rankings were determined by the Bosch model and the competitor
+              model.
+            </Text>
+          </Box>
+          <Box>
             <Text as="b">USP ranking:</Text>
             <USPTable USPs={state.USPs} USPPrices={state.USPPrices} />
           </Box>

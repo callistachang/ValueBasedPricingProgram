@@ -22,6 +22,13 @@ function PriceRecommendationPage(props) {
         <Stack spacing={10}>
           <Heading>Price Recommendation Page</Heading>
           <Box>
+            <Text>
+              Comparison of the USP rankings and prices input by the user, and
+              compare them with the rankings and prices determined by the Bosch
+              model.
+            </Text>
+          </Box>
+          <Box>
             <Text as="b">Price Recommendation Table:</Text>
             <RecommendationTable
               USPs={state.USPs}
