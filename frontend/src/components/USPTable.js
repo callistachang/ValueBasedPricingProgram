@@ -10,10 +10,13 @@ import {
 } from "@chakra-ui/react";
 
 export function USPTable(props) {
-  const createRow = (usp, rank) => (
+  //boschRank : get data from backend, run through model
+  //competiorRank : get from CSV files
+  const createRow = (usp, boschRank, competitorRank) => (
     <Tr>
       <Td>{usp}</Td>
-      <Td>{rank}</Td>
+      <Td>{boschRank}</Td>
+      <Td>{competitorRank}</Td>
     </Tr>
   );
 
@@ -23,12 +26,17 @@ export function USPTable(props) {
         <Thead>
           <Tr>
             <Th>USP Title</Th>
-            <Th>Ranking</Th>
+            <Th>Bosch Ranking</Th>
+            <Th>Competitor Ranking</Th>
           </Tr>
         </Thead>
         <Tbody>
           {Array.from(Array(props.USPs.length).keys()).map((i) =>
-            createRow(props.USPs[i], props.USPPrices[i])
+            createRow(
+              props.USPs[i],
+              "bosch's ranking from the model",
+              "from flora's csv OR COMPETITORS RANKING FROM THE MODEL"
+            )
           )}
         </Tbody>
       </Table>

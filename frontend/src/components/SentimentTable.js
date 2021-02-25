@@ -37,13 +37,13 @@ export function SentimentTable(props) {
           <Thead>
             <Tr>
               <Th>Keyword</Th>
-              <Th>Ranking</Th>
+              <Th>Bosch's Ranking</Th>
               <Th>Competitor's Ranking</Th>
             </Tr>
           </Thead>
           <Tbody>
             {Array.from(Array(arr.length).keys()).map((i) =>
-              createRow(arr[i]["word/phrase"], arr[i]["rank"], "")
+              createRow(arr[i]["word/phrase"], i + 1, "")
             )}
           </Tbody>
         </Table>

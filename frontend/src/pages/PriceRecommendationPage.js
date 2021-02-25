@@ -23,7 +23,10 @@ function PriceRecommendationPage(props) {
           <Heading>Price Recommendation Page</Heading>
           <Box>
             <Text as="b">Price Recommendation Table:</Text>
-            <RecommendationTable />
+            <RecommendationTable
+              USPs={state.USPs}
+              USPPrices={state.USPPrices}
+            />
           </Box>
         </Stack>
       </Container>

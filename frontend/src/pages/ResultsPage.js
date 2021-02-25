@@ -16,6 +16,7 @@ import { Context } from "../data/Store";
 function ResultsPage(props) {
   const [state, dispatch] = useContext(Context);
 
+  // From the model, take the top 3 USPs that are not listed in the form
   return (
     <div>
       <SideMenuNavBar />

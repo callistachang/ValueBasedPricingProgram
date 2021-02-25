@@ -1,7 +1,9 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import Reducer from "./Reducer";
 
-const initialState = {
+const stateGet = window.localStorage.getItem("state");
+
+const initialState = JSON.parse(localStorage.getItem("state")) || {
   USPPrices: [],
   USPs: [],
   competitor: "",
@@ -13,6 +15,11 @@ const initialState = {
 
 const Store = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("state", JSON.stringify(state));
+  }, [state]);
+
   return (
     <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
   );
