@@ -6,6 +6,7 @@ import {
   OrderedList,
   Stack,
   Heading,
+  Image,
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { SideMenuNavBar } from "../components/SideMenuNavBar";
@@ -25,7 +26,6 @@ function ResultsPage(props) {
             <Text as="b">USP ranking:</Text>
             <USPTable USPs={state.USPs} USPPrices={state.USPPrices} />
           </Box>
-
           <Box>
             <Text as="b">Top 3 USPs not included in choices:</Text>
             <OrderedList>

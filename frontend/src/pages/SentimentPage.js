@@ -5,6 +5,7 @@ import {
   ListItem,
   OrderedList,
   Stack,
+  Image,
   Heading,
 } from "@chakra-ui/react";
 import { useContext } from "react";
@@ -15,6 +16,8 @@ import { Context } from "../data/Store";
 
 function SentimentPage(props) {
   const [state, dispatch] = useContext(Context);
+  const wordcloudImageFpath =
+    "/wordcloud/" + state.product + "_" + state.subproduct + ".png";
 
   return (
     <div>
@@ -22,6 +25,10 @@ function SentimentPage(props) {
       <Container>
         <Stack spacing={10}>
           <Heading>Sentiment Results Page</Heading>
+          <Box>
+            <Text as="b">Keyword wordcloud:</Text>
+            <Image src={wordcloudImageFpath} alt="wordcloud" />
+          </Box>
           <Box>
             <Text as="b">Keyword Sentiment Table:</Text>
             <SentimentTable />
