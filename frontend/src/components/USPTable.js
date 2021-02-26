@@ -2,11 +2,9 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   Text,
   OrderedList,
   ListItem,
@@ -53,15 +51,18 @@ export function USPTable(props) {
       product_name: props.productName,
       is_bosch: false,
     };
-    const boschResponse = await fetch("http://localhost:8000/coef", {
-      method: "post",
-      credentials: "include",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(boschPostData),
-    })
+    const boschResponse = await fetch(
+      "https://bosch-backend.azurewebsites.net/coef",
+      {
+        method: "post",
+        credentials: "include",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(boschPostData),
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -69,15 +70,18 @@ export function USPTable(props) {
         console.log(JSON.stringify(data));
         setBoschArr(data);
       });
-    const competitorResponse = await fetch("http://localhost:8000/coef", {
-      method: "post",
-      credentials: "include",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(competitorPostData),
-    })
+    const competitorResponse = await fetch(
+      "https://bosch-backend.azurewebsites.net/coef",
+      {
+        method: "post",
+        credentials: "include",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(competitorPostData),
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -91,7 +95,9 @@ export function USPTable(props) {
     var i = 1;
     var notInList = [];
     for (var key of Object.keys(boschArr)) {
-      if (!(key in props.USPs)) {
+      // console.log(key);
+      // console.log(props.USPs);
+      if (!props.USPs.includes(key)) {
         notInList.push(key);
         if (notInList.length == 3) {
           return notInList;

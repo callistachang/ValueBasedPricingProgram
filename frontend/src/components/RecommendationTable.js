@@ -55,15 +55,18 @@ export function RecommendationTable(props) {
       product_name: props.productName,
       is_bosch: false,
     };
-    const boschResponse = await fetch("http://localhost:8000/coef", {
-      method: "post",
-      credentials: "include",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(boschPostData),
-    })
+    const boschResponse = await fetch(
+      "https://bosch-backend.azurewebsites.net/coef",
+      {
+        method: "post",
+        credentials: "include",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(boschPostData),
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -71,15 +74,18 @@ export function RecommendationTable(props) {
         console.log(JSON.stringify(data));
         setBoschArr(data);
       });
-    const competitorResponse = await fetch("http://localhost:8000/coef", {
-      method: "post",
-      credentials: "include",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(competitorPostData),
-    })
+    const competitorResponse = await fetch(
+      "https://bosch-backend.azurewebsites.net/coef",
+      {
+        method: "post",
+        credentials: "include",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(competitorPostData),
+      }
+    )
       .then((res) => {
         return res.json();
       })
