@@ -1,5 +1,7 @@
 # Bosch Project
 
+https://bosch-frontend.azurewebsites.net/
+
 ## Local Setup
 
 ### Backend
