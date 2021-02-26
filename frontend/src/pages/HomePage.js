@@ -29,8 +29,6 @@ function HomePage() {
     productToSubproductDict[productList[0]][0]
   );
   const [inputCompetitor, setInputCompetitor] = useState(competitorList[0]);
-  const [costPrice, setCostPrice] = useState(null);
-  const [targetSellingPrice, setTargetSellingPrice] = useState(null);
   const [inputUSPPrices, setInputUSPPrices] = useState([]);
   const [inputUSPs, setInputUSPs] = useState([]);
   const [state, dispatch] = useContext(Context);
@@ -58,16 +56,21 @@ function HomePage() {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    if (costPrice == null || targetSellingPrice == null) {
-      alert("Make sure that all values are filled in!");
+    if (inputUSPs.length == 0 || inputUSPPrices.length == 0) {
+      alert("Make sure at least 1 USP with 1 corresponding price is filled in");
+      return;
+    } else if (inputUSPs.length != inputUSPPrices.length) {
+      alert(
+        "Make sure that the amount of USPs filled in the same as the amount of USP Prices filled"
+      );
       return;
     }
     const formData = {
       product: inputProduct,
       subproduct: inputSubproduct,
       competitor: inputCompetitor,
-      costPrice: costPrice,
-      targetSellingPrice: targetSellingPrice,
+      // costPrice: costPrice,
+      // targetSellingPrice: targetSellingPrice,
       USPs: inputUSPs,
       USPPrices: inputUSPPrices,
     };
@@ -100,28 +103,6 @@ function HomePage() {
         />
 
         <Box>
-          <FormLabel>Cost Price</FormLabel>
-          <Input
-            type="number"
-            placeholder="e.g. 100"
-            onChange={(event) => setCostPrice(event.target.value)}
-          />
-        </Box>
-
-        <Box>
-          <FormLabel>Target Selling Price</FormLabel>
-          <Input
-            type="number"
-            placeholder="e.g. 100"
-            onChange={(event) => setTargetSellingPrice(event.target.value)}
-          />
-        </Box>
-
-        <Button mt={8} onClick={handleSubmitForm}>
-          Submit
-        </Button>
-
-        <Box>
           <FormLabel>Top 6 USPs</FormLabel>
           <Stack>
             {Array.from(Array(6).keys()).map((num) => (
@@ -148,6 +129,9 @@ function HomePage() {
             ))}
           </Stack>
         </Box>
+        <Button mt={8} onClick={handleSubmitForm}>
+          Submit
+        </Button>
       </SimpleGrid>
     </Container>
   );
