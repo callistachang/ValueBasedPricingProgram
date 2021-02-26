@@ -33,6 +33,7 @@ function PriceRecommendationPage(props) {
             <RecommendationTable
               USPs={state.USPs}
               USPPrices={state.USPPrices}
+              productName={state.product}
             />
           </Box>
         </Stack>

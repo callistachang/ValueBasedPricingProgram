@@ -32,15 +32,11 @@ function ResultsPage(props) {
           </Box>
           <Box>
             <Text as="b">USP ranking:</Text>
-            <USPTable USPs={state.USPs} USPPrices={state.USPPrices} />
-          </Box>
-          <Box>
-            <Text as="b">Top 3 USPs not included in choices:</Text>
-            <OrderedList>
-              <ListItem>blah1</ListItem>
-              <ListItem>blah2</ListItem>
-              <ListItem>blah3</ListItem>
-            </OrderedList>
+            <USPTable
+              USPs={state.USPs}
+              USPPrices={state.USPPrices}
+              productName={state.product}
+            />
           </Box>
         </Stack>
       </Container>

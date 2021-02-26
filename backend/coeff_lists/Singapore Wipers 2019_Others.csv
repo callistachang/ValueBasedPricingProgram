@@ -1,0 +1,21 @@
+word/phrase,rank,cat,newcat
+good,12.68857865,,
+delivery,9.952792083,delivery,delivery
+fast,8.975680013,delivery,delivery
+fast delivery,8.111212347,delivery,delivery
+item,8.026745205,,
+received,7.889942975,delivery,delivery
+condition,5.659586208,product,product
+product,5.146838323,,
+good condition,5.098686565,product,product
+item received,5.061868249,delivery,delivery
+wipers,4.794950894,,
+received good,4.696504094,delivery,delivery
+works,3.869229415,product,functional
+great,3.528925277,,
+wiper,3.207272319,,
+price,3.035226151,price,price
+thanks,2.952735385,,
+easy,2.948864321,product,installation
+install,2.946971335,product,installation
+fits,2.893671375,product,installation

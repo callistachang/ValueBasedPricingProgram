@@ -5,6 +5,7 @@ import {
   SimpleGrid,
   Stack,
   InputLeftAddon,
+  Text,
   Input,
   InputGroup,
   Button,
@@ -132,6 +133,10 @@ function HomePage() {
         <Button mt={8} onClick={handleSubmitForm}>
           Submit
         </Button>
+        <Text>
+          Possible USPs: quality, delivery, product, service, price,
+          installation, functional, durable
+        </Text>
       </SimpleGrid>
     </Container>
   );

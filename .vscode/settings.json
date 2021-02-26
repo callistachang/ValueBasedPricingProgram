@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a0ddb15d-1b5d-4677-a1fc-5142ed1f377c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/bosch-frontend",
+    "appService.deploySubpath": "frontend"
+}
