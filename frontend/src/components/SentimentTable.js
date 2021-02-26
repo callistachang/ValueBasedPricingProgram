@@ -6,7 +6,6 @@ export function SentimentTable(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [arr, setArr] = useState([]);
   const [competitorRankArr, setCompetitorRankArr] = useState([]);
-  console.log(props.competitorKeywordPath);
 
   useEffect(() => {
     readRemoteFile(props.uspCsvPath, {
@@ -18,8 +17,6 @@ export function SentimentTable(props) {
     readRemoteFile(props.competitorKeywordPath, {
       complete: (results) => {
         setCompetitorRankArr(results["data"]);
-        console.log("here be d arr");
-        console.log(competitorRankArr);
       },
       header: true,
     });

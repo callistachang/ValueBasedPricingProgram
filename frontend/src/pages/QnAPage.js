@@ -14,7 +14,8 @@ import { Context } from "../data/Store";
 
 function QnAPage(props) {
   const [state, dispatch] = useContext(Context);
-  console.log(props);
+  const qnaFpath =
+    "/qnacsv/" + state.product + "_" + state.subproduct + "_Qna.csv";
 
   return (
     <div>
@@ -30,7 +31,7 @@ function QnAPage(props) {
           </Box>
           <Box>
             <Text as="b">QnA Table:</Text>
-            <QnATable />
+            <QnATable qnaFpath={qnaFpath} />
           </Box>
         </Stack>
       </Container>
