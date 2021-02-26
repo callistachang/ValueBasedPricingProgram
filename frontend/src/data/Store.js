@@ -4,8 +4,8 @@ import Reducer from "./Reducer";
 const stateGet = window.localStorage.getItem("state");
 
 const initialState = JSON.parse(localStorage.getItem("state")) || {
-  USPPrices: [],
-  USPs: [],
+  USPPrices: ["100"],
+  USPs: ["usp1"],
   competitor: "",
   costPrice: "",
   product: "",

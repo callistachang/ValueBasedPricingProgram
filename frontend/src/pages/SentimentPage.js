@@ -19,9 +19,13 @@ function SentimentPage(props) {
   const wordcloudImageFpath =
     "/wordcloud/" + state.product + "_" + state.subproduct + ".png";
   const uspCsvPath =
-    "/csv/" + state.product + "_" + state.subproduct + "_Sentiment.csv";
+    "/sentimentcsv/" +
+    state.product +
+    "_" +
+    state.subproduct +
+    "_Sentiment.csv";
   const competitorKeywordPath =
-    "/csv/" + state.product + "_Competitor Keyword Rank.csv";
+    "/keywordcsv/" + state.product + "_Competitor Keyword Rank.csv";
 
   return (
     <div>
